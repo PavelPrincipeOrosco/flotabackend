@@ -1,0 +1,33 @@
+---
+# Configuration:
+# configured for US10. For other landscapes, please change in ../vars.yml
+# If the route is occupied, you might need to change ID in ../manifest.yml
+# Change Routes and SPRING_PROFILE to deploy (dev, qas, prd)
+applications:
+
+- name: flota_api
+  instances: 1
+  memory: 2048M
+  timeout: 600
+  #random-route: true
+  routes:
+    - route: flota.cfapps.us10.hana.ondemand.com
+    - route: dev-tasa-flota.cfapps.us10.hana.ondemand.com
+    #- route: prd-silvestre-tasa.cfapps.us10.hana.ondemand.com
+  path: target/flotatasaback.jar
+  buildpacks:
+    - sap_java_buildpack
+  env:
+    TARGET_RUNTIME: Tomcat
+    SET_LOGGING_LEVEL: '{ROOT: INFO, com.sap.cloud.sdk: INFO}'
+    JBP_CONFIG_SAPJVM_MEMORY_SIZES: 'metaspace:128m..'
+    SPRING_PROFILES_ACTIVE: dev
+    #SPRING_PROFILES_ACTIVE: prd
+    #destinations: '[{"name":"app-destination", "url":"<APPLICATION_URL>", "forwardAuthToken": true}]'
+
+#  services:
+#  - my-application-logs
+#  - my-xsuaa
+#  - my-destination
+#  - my-connectivity
+#  - JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
