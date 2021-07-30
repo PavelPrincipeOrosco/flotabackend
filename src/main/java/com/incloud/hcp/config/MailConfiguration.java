@@ -33,7 +33,7 @@ public class MailConfiguration {
 	}
 
 	//TODO: TEMPORAL
-	@Bean
+	/*@Bean
 	public JavaMailSender getMailSender() {
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 
@@ -53,6 +53,6 @@ public class MailConfiguration {
 
 		mailSender.setJavaMailProperties(javaMailProperties);
 		return mailSender;
-	}
+	}*/
 
 }
