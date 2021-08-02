@@ -13,7 +13,6 @@ package com.incloud.hcp.service.impl;
 import com.incloud.hcp.config.excel.ExcelDefault;
 import com.incloud.hcp.domain.AppProcesoLog;
 import com.incloud.hcp.domain.AppProcesoLog_;
-import com.incloud.hcp.repository.AppProcesoLogRepository;
 import com.incloud.hcp.service.AppProcesoLogService;
 import com.incloud.hcp.service.support.PageRequestByExample;
 import com.incloud.hcp.service.support.PageResponse;
@@ -44,7 +43,6 @@ import java.awt.*;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 /**
  * A simple DTO Facility for AppProcesoLog.
@@ -61,13 +59,14 @@ public abstract class AppProcesoLogServiceImpl implements AppProcesoLogService {
     @Autowired
     protected MessageSource messageSource;
 
-    @Autowired
-    protected AppProcesoLogRepository appProcesoLogRepository;
+    /*@Autowired
+    protected AppProcesoLogRepository appProcesoLogRepository;*/
 
     @Transactional(readOnly = true)
     public Optional<AppProcesoLog> findOne(Integer id) {
         log.debug("Ingresando findOne: ", id);
-        return this.appProcesoLogRepository.findById(id);
+        //return this.appProcesoLogRepository.findById(id);
+        return null;
     }
 
     @Transactional(readOnly = true)
@@ -75,8 +74,9 @@ public abstract class AppProcesoLogServiceImpl implements AppProcesoLogService {
         log.debug("Ingresando findAll");
         Sort sort = Sort.by("id");
         sort = this.setFindAll(sort);
-        List<AppProcesoLog> lista = this.appProcesoLogRepository.findAll(sort);
-        return lista;
+//        List<AppProcesoLog> lista = this.appProcesoLogRepository.findAll(sort);
+       // List<AppProcesoLog> lista = new Arr
+        return null;
     }
 
     protected abstract Sort setFindAll(Sort sort);
@@ -100,8 +100,8 @@ public abstract class AppProcesoLogServiceImpl implements AppProcesoLogService {
         }
         Sort sort = Sort.by("id");
         sort = this.setFind(req, matcher, example, sort);
-        List<AppProcesoLog> lista = this.appProcesoLogRepository.findAll(example, sort);
-        return lista;
+        //List<AppProcesoLog> lista = this.appProcesoLogRepository.findAll(example, sort);
+        return null;
     }
 
     protected abstract Sort setFind(AppProcesoLog req, ExampleMatcher matcher, Example<AppProcesoLog> example, Sort sort);
@@ -129,14 +129,15 @@ public abstract class AppProcesoLogServiceImpl implements AppProcesoLogService {
         sort = this.setFind(appProcesoLog, matcher, example, sort);
         req.generarLazyDefecto();
         this.setFindPaginated(req, matcher, example);
-        if (example != null) {
+        /*if (example != null) {
             page = this.appProcesoLogRepository.findAll(example, req.toPageable(sort));
         } else {
             page = this.appProcesoLogRepository.findAll(req.toPageable(sort));
         }
 
         List<AppProcesoLog> content = page.getContent().stream().map(this::toDTO).collect(Collectors.toList());
-        return new PageResponse<>(page.getTotalPages(), page.getTotalElements(), content);
+        return new PageResponse<>(page.getTotalPages(), page.getTotalElements(), content);*/
+        return null;
     }
 
     protected abstract void setFindPaginated(PageRequestByExample<AppProcesoLog> req, ExampleMatcher matcher, Example<AppProcesoLog> example);
@@ -413,7 +414,7 @@ public abstract class AppProcesoLogServiceImpl implements AppProcesoLogService {
         dto = this.completarDatosBean(dto);
         dto = this.setBeforeSave(dto);
         this.setSave(dto);
-        dto = this.appProcesoLogRepository.save(dto);
+       // dto = this.appProcesoLogRepository.save(dto);
         dto = this.setAfterSave(dto);
         return dto;
     }
@@ -452,7 +453,7 @@ public abstract class AppProcesoLogServiceImpl implements AppProcesoLogService {
         appProcesoLog.setDuracionMs(dto.getDuracionMs());
         appProcesoLog = this.completarDatosBean(appProcesoLog);
         this.setCreate(appProcesoLog);
-        return this.appProcesoLogRepository.save(appProcesoLog);
+        return null;
     }
 
     protected abstract void setCreate(AppProcesoLog dto);
@@ -470,7 +471,7 @@ public abstract class AppProcesoLogServiceImpl implements AppProcesoLogService {
             return;
         }
         this.setDelete(id);
-        this.appProcesoLogRepository.deleteById(id);
+        //this.appProcesoLogRepository.deleteById(id);
     }
 
     protected abstract void setDelete(Integer id);
@@ -478,7 +479,7 @@ public abstract class AppProcesoLogServiceImpl implements AppProcesoLogService {
     public void deleteAll() {
         log.debug("Ingresando deleteAll");
         this.setDeleteAll();
-        this.appProcesoLogRepository.deleteAll();
+       // this.appProcesoLogRepository.deleteAll();
     }
 
     protected abstract void setDeleteAll();

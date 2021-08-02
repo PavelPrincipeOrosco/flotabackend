@@ -21,8 +21,8 @@ public class JCOProveedorServiceImpl implements JCOProveedorService {
         logger.error("listaProveedor__" + dto);
         List<ProveedorDto> lista = new ArrayList<ProveedorDto>();
         ProveedorDto dtoUno = new ProveedorDto();
-        dtoUno.setRazonSocial("rz 01");
-        dtoUno.setRuc("10987666543");
+        dtoUno.setRazonSocial("rz 01_01");
+        dtoUno.setRuc("10987666543_02");
         lista.add(dtoUno);
         return lista;
     }

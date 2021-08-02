@@ -1,6 +1,5 @@
 package com.incloud.hcp.job;
 
-import com.incloud.hcp.repository.AppProcesoLogRepository;
 import com.incloud.hcp.ws.tipoCambio.service.GSTipoCambioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -18,8 +17,8 @@ public class ScheduledTasks {
 
 
 
-    @Autowired
-    private AppProcesoLogRepository appProcesoLogRepository;
+    /*@Autowired
+    private AppProcesoLogRepository appProcesoLogRepository;*/
 
 
     @Autowired

@@ -3,12 +3,11 @@ package com.incloud.hcp.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
-import org.springframework.stereotype.Component;
 
 import java.util.Map;
 import java.util.Properties;
 
-@Component("mailConfig")
+//@Component("mailConfig")
 public class MailConfiguration {
 
 	@Bean
@@ -33,15 +32,15 @@ public class MailConfiguration {
 	}
 
 	//TODO: TEMPORAL
-	/*@Bean
+	@Bean
 	public JavaMailSender getMailSender() {
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 
 		mailSender.setDefaultEncoding("UTF-8");
-		mailSender.setHost("smtp.office365.com");
+		mailSender.setHost("smtp.gmail.com");
 		mailSender.setPort(Integer.valueOf(587));
-		mailSender.setUsername("comprobantes.electronicos@gruposilvestre.com.pe");
-		mailSender.setPassword("$1lv3$7r3@2o2o");
+		mailSender.setUsername("pprincipe.ti@gmail.com");
+		mailSender.setPassword("Inicio01$$");
 
 
 		Properties javaMailProperties = new Properties();
@@ -49,10 +48,10 @@ public class MailConfiguration {
 		javaMailProperties.put("mail.smtp.auth", "true");
 		javaMailProperties.put("mail.transport.protocol", "smtp");
 		javaMailProperties.put("mail.debug", "false");
-		javaMailProperties.put("mail.smtp.host", "smtp.hornet.email");
+		javaMailProperties.put("mail.smtp.host", "smtp.gmail.com");
 
 		mailSender.setJavaMailProperties(javaMailProperties);
 		return mailSender;
-	}*/
+	}
 
 }

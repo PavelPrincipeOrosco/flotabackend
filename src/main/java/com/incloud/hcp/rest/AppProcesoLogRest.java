@@ -13,7 +13,6 @@ package com.incloud.hcp.rest;
 import com.incloud.hcp.config.BindingErrorsResponse;
 import com.incloud.hcp.config.excel.ExcelType;
 import com.incloud.hcp.domain.AppProcesoLog;
-import com.incloud.hcp.repository.AppProcesoLogRepository;
 import com.incloud.hcp.rest._framework.AppRest;
 import com.incloud.hcp.service.delta.AppProcesoLogDeltaService;
 import com.incloud.hcp.service.support.PageRequestByExample;
@@ -49,8 +48,8 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 public abstract class AppProcesoLogRest extends AppRest {
     private final Logger log = LoggerFactory.getLogger(AppProcesoLogRest.class);
 
-    @Autowired
-    protected AppProcesoLogRepository appProcesoLogRepository;
+    /*@Autowired
+    protected AppProcesoLogRepository appProcesoLogRepository;*/
 
     @Autowired
     protected AppProcesoLogDeltaService appProcesoLogDeltaService;

@@ -22,9 +22,13 @@ applications:
     SET_LOGGING_LEVEL: '{ROOT: INFO, com.sap.cloud.sdk: INFO}'
     JBP_CONFIG_SAPJVM_MEMORY_SIZES: 'metaspace:128m..'
     SPRING_PROFILES_ACTIVE: dev
+    # xsuaa_connectivity_instance_name: "jco_xs"
     #SPRING_PROFILES_ACTIVE: prd
     #destinations: '[{"name":"app-destination", "url":"<APPLICATION_URL>", "forwardAuthToken": true}]'
-
+  # services:
+  # - jco_xs
+  #   - jco_con
+#    - jco_dest
 #  services:
 #  - my-application-logs
 #  - my-xsuaa

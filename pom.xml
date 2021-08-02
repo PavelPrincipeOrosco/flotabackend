@@ -620,6 +620,11 @@
 			<version>0.9.0.RELEASE</version>
 		</dependency>
 
+		<!--<dependency>
+			<groupId>com.sap.conn.jco</groupId>
+			<artifactId>sapjco3</artifactId>
+			<version>3.0.14</version>
+		</dependency>-->
 
 
 
