@@ -13,7 +13,7 @@ applications:
   routes:
     - route: flota.cfapps.us10.hana.ondemand.com
     - route: dev-tasa-flota.cfapps.us10.hana.ondemand.com
-    #- route: prd-silvestre-tasa.cfapps.us10.hana.ondemand.com
+    #- route: prd-tasa-tasa.cfapps.us10.hana.ondemand.com
   path: target/flotatasaback.jar
   buildpacks:
     - sap_java_buildpack

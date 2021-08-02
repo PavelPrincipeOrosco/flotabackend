@@ -3,7 +3,7 @@ package com.incloud.hcp.ws.util;
 public class GSConstant {
 
     //TODO: pasarlo a BD o destination
-    //public static final String URL_API_GS_TEST = "http://wsdynamics.gruposilvestre.com.pe:81/GS/api";
+    //public static final String URL_API_GS_TEST = "http://wsdynamics.grupotasa.com.pe:81/GS/api";
     //public static final String KEY_API_GS_TEST = "bfab392a7caf553f9010b25d89bbde92479a05a193e615778c7e3e18b236d875";
 
     public static final String PATH_API_GS_PROVEEDOR_REGISTRO = "Agenda/IPROV_RegistrarProveedor";
